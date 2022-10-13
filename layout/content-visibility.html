@@ -32,7 +32,6 @@
       }
       img {
         width: 100%;
-        /* 防止图像拉伸 */
         object-fit: cover;
       }
       .auto img {
@@ -43,6 +42,21 @@
       }
       .h3-w2 img {
         aspect-ratio: 3/2;
+      }
+      .content-visibility-visible {
+        content-visibility: visible;
+      }
+      #btn {
+        position: absolute;
+        width: 130px;
+        height: 40px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 25px;
+        cursor: pointer;
+        margin-top: 320px;
+        background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+        border: none;
       }
     </style>
   </head>
@@ -68,5 +82,14 @@
         alt="一碗周头像"
       />
     </div>
+    <button id="btn">显示</button>
   </body>
+  <script>
+    const card = [...document.getElementsByClassName('card')]
+    document.getElementById('btn').addEventListener('click', function () {
+      card.forEach(element => {
+        element.className = element.className + ' content-visibility-visible'
+      })
+    })
+  </script>
 </html>
