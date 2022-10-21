@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>mix-blend-mode</title>
+
+  <style>
+    body {
+      width: 100%;
+      background-color: #fff;
+      margin: 0 auto;
+    }
+
+    .container {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: cornflowerblue;
+      margin: 80px auto;
+    }
+
+    .title {
+      color: #333;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+    }
+  </style>
+
+<body>
+  <h3 class="title">mix-blend-mode:
+    <select id="select">
+      <option value="normal">normal -- 正常</option>
+      <option value="multiply">multiply -- 正片叠底</option>
+      <option value="screen">screen -- 滤色</option>
+      <option value="overlay">overlay -- 叠加</option>
+      <option value="darken">darken -- 变暗</option>
+      <option value="lighten">lighten -- 变亮</option>
+      <option value="color-dodge">color-dodge -- 颜色减淡</option>
+      <option value="color-burn">color-burn -- 颜色加深</option>
+      <option value="hard-light">hard-light -- 强光</option>
+      <option value="soft-light">soft-light -- 柔光</option>
+      <option value="difference">difference -- 差值</option>
+      <option value="exclusion">exclusion -- 排除</option>
+      <option value="hue">hue -- 色相</option>
+      <option value="saturation">saturation -- 饱和度</option>
+      <option value="color">color -- 颜色</option>
+      <option value="luminosity">luminosity -- 亮度</option>
+    </select>
+  </h3>
+  <div class="container">
+    <img id="avatar"
+         src="https://p3-passport.byteimg.com/img/user-avatar/75e47e118bbc3ff51aa2731f74953c35~240x240.awebp"
+         alt="一碗周头像" />
+  </div>
+  <script>
+    const select = document.getElementById('select')
+    const mode = document.getElementsByClassName("mode")
+    const avatar = document.getElementById('avatar')
+    select.addEventListener('click', changeEvent)
+    function changeEvent () {
+      avatar.style.cssText = 'mix-blend-mode:' + select.value
+    };
+  </script>
+</body>
+
+</html>
