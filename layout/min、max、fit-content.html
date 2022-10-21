@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>min、max、fit-content</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .wrap {
+      width: 680px;
+      margin: auto;
+    }
+
+    .container {
+      width: fit-content;
+      margin: auto;
+    }
+
+    .card {
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      margin: 16px auto;
+    }
+
+    .card.max p {
+      width: max-content;
+    }
+
+    .card.min p {
+      width: min-content;
+    }
+
+    .card.fit p {
+      width: fit-content;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="container">
+      <div class="card max">
+        <h3>max-content</h3>
+        <img src="https://p3-passport.byteimg.com/img/user-avatar/75e47e118bbc3ff51aa2731f74953c35~240x240.awebp"
+             alt="一碗周头像" />
+        <p>君不见黄河之水天上来 奔流到海不复回 君不见高堂明镜悲白发 朝如青丝暮成雪 人生得意须尽欢 莫使金樽空对月 天生我才必有用 千金散尽还复来
+        </p>
+      </div>
+      <div class="card min">
+        <h3>min-content</h3>
+        <img src="https://p3-passport.byteimg.com/img/user-avatar/75e47e118bbc3ff51aa2731f74953c35~240x240.awebp"
+             alt="一碗周头像" />
+        <p>君不见黄河之水天上来 奔流到海不复回 君不见高堂明镜悲白发 朝如青丝暮成雪 人生得意须尽欢 莫使金樽空对月 天生我才必有用 千金散尽还复来
+        </p>
+      </div>
+      <div class="card fit">
+        <h3>fit-content</h3>
+        <img src="https://p3-passport.byteimg.com/img/user-avatar/75e47e118bbc3ff51aa2731f74953c35~240x240.awebp"
+             alt="一碗周头像" />
+        <p>君不见黄河之水天上来 奔流到海不复回 君不见高堂明镜悲白发 朝如青丝暮成雪 人生得意须尽欢 莫使金樽空对月 天生我才必有用 千金散尽还复来
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
