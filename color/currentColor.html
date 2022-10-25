@@ -8,10 +8,31 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
   <title>currentColor</title>
+  <style>
+    body {
+      margin: 16px;
+    }
+
+    .btn {
+      border: 1px solid currentColor;
+      box-shadow: 1px 1px 2px currentColor;
+      font-size: 32px;
+      padding: 0.5rem 2rem;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+  </style>
 </head>
 
 <body>
-
+  <button class="btn red">一碗周</button>
+  <button class="btn blue">一碗周</button>
 </body>
 
 </html>
