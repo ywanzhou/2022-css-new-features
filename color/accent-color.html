@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>accent-color</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 320px;
+      margin: 0 auto;
+      margin-top: 24px;
+      accent-color: #23c7ec;
+    }
+
+    .color {
+      margin: 8px auto;
+      width: 320px;
+    }
+  </style>
+</head>
+
+<body>
+  <ul id="ul">
+    <li>复选框：<input type="checkbox"
+             checked></li>
+    <li>单选框
+      <input type="radio"
+             checked
+             name="test">
+      <input type="radio"
+             name="test">
+    </li>
+    <li>范围选择框：<input type="range"></li>
+    <li>进度条：<progress value="0.5"></li>
+  </ul>
+
+  <div class="color">
+    选择颜色：<input type="color"
+           id="color"
+           value="#23c7ec"
+           is="ui-color">
+  </div>
+  <script>
+    const color = document.getElementById('color')
+    const ul = document.getElementById('ul')
+
+    color.addEventListener('input', function () {
+      ul.style.accentColor = this.value;
+    });
+  </script>
+</body>
+
+</html>
