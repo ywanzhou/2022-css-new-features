@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>scroll-snap-align三个值的区别</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    #select {
+      display: block;
+      margin: 10px auto;
+    }
+
+    .container {
+      display: flex;
+      height: 150px;
+      margin: 0 auto;
+      width: 300px;
+      overflow: auto;
+      border: 1px solid #eee;
+      align-items: center;
+    }
+
+    .item {
+      height: 100%;
+      flex-shrink: 0;
+      width: 120px;
+      line-height: 120px;
+      margin: 0 60px;
+      text-align: center;
+      font-size: 28px;
+    }
+
+    .item:nth-child(1) {
+      background-color: lightcoral;
+    }
+
+    .item:nth-child(2) {
+      background-color: lightskyblue;
+    }
+
+    .item:nth-child(3) {
+      background-color: lightgreen;
+    }
+
+    .item:nth-child(4) {
+      background-color: lightcoral;
+    }
+
+    .item:nth-child(5) {
+      background-color: lightskyblue;
+    }
+
+    .item:nth-child(6) {
+      background-color: lightgreen;
+    }
+
+    .scroll {
+      scroll-snap-type: x mandatory;
+    }
+
+    .container.start .item {
+      scroll-snap-align: start;
+    }
+
+    .container.center .item {
+      scroll-snap-align: center;
+    }
+
+    .container.end .item {
+      scroll-snap-align: end;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h3 id="title">
+      <code>scroll-snap-align: center</code>
+    </h3>
+    <select id="select">
+      <option value="start">start</option>
+      <option value="center"
+              selected>center</option>
+      <option value="end">end</option>
+    </select>
+    <div class="container scroll center"
+         id="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </div>
+  <script>
+    const container = document.getElementById('container')
+    const title = document.getElementById('title')
+    const select = document.getElementById('select')
+    select.addEventListener('change', function () {
+      container.classList.remove('start', 'center', 'end')
+      container.classList.add(select.value)
+      title.innerHTML = `<code>scroll-snap-align: ${select.value}</code>`
+
+    })
+  </script>
+</body>
+
+</html>
