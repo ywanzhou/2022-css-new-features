@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>scrollbar-gutter属性</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .container {
+      height: 160px;
+      width: 300px;
+      overflow: auto;
+      margin: 16px auto;
+      border: 1px solid lightcoral;
+    }
+
+    #btn {
+      display: block;
+      margin: 10px auto;
+    }
+
+    .title {
+      text-align: center;
+      color: #333;
+    }
+
+    .auto {
+      scrollbar-gutter: auto;
+    }
+
+    .stable {
+      scrollbar-gutter: stable;
+    }
+
+    .both-edges {
+      scrollbar-gutter: stable both-edges;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn">增加容器内部高度</button>
+
+  <div class="container auto">
+    <h3 class="title">
+      <code>scrollbar-gutter: auto;</code>
+    </h3>
+    <div class="box"></div>
+  </div>
+  <div class="container stable">
+    <h3 class="title">
+      <code>scrollbar-gutter: stable;</code>
+    </h3>
+    <div class="box"></div>
+  </div>
+  <div class="container both-edges">
+    <h3 class="title">
+      <code>scrollbar-gutter: both-edges;</code>
+    </h3>
+    <div class="box"></div>
+  </div>
+  <script>
+    const btn = document.getElementById('btn')
+    const boxs = [...document.getElementsByClassName('box')]
+    btn.addEventListener('click', function () {
+      if (btn.innerText === '增加容器内部高度') {
+        btn.innerText = '减少容器内部高度'
+        boxs.forEach(e => {
+          e.style.height = '1000px'
+        })
+      } else {
+        btn.innerText = '增加容器内部高度'
+        boxs.forEach(e => {
+          e.style.height = 'auto'
+        })
+      }
+    })
+  </script>
+</body>
+
+</html>
