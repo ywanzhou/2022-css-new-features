@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>scroll-behavior属性</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #title {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    nav {
+      height: 50px;
+      text-align: center;
+
+    }
+
+    nav a {
+      display: inline-block;
+      line-height: 50px;
+      text-decoration: none;
+      padding: 0 30px;
+    }
+
+    .container {
+      height: 300px;
+      width: 400px;
+      overflow: auto;
+      margin: 0 auto;
+    }
+
+    .smooth {
+      /* 重点 */
+      scroll-behavior: smooth;
+    }
+
+    .box {
+      width: 100%;
+      text-align: center;
+      font-size: 30px;
+      height: 300px;
+      color: #FFF;
+    }
+
+    #box1 {
+      background: lightcoral;
+    }
+
+    #box2 {
+      background: lightblue;
+    }
+
+    #box3 {
+      background: lightpink;
+    }
+  </style>
+</head>
+
+<body>
+  <h3 id="title">无滚动动画</h3>
+  <nav>
+    <a href="#box1">box1</a>
+    <a href="#box2">box2</a>
+    <a href="#box3">box3</a>
+    <button id="btn">切换</button>
+  </nav>
+
+  <div class="container"
+       id="container">
+    <div id="box1"
+         class=" box">box1</div>
+    <div id="box2"
+         class=" box">box2</div>
+    <div id="box3"
+         class=" box">box3</div>
+  </div>
+  <script>
+    const container = document.getElementById('container')
+    const title = document.getElementById('title')
+    const btn = document.getElementById('btn')
+    btn.addEventListener('click', function () {
+      if (container.classList.toggle('smooth')) {
+        title.innerHTML = '有滚动动画'
+      } else {
+
+        title.innerHTML = '无滚动动画'
+      }
+    })
+  </script>
+</body>
+
+</html>
