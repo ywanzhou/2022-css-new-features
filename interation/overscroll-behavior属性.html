@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>overscroll-behavior属性</title>
+  <!-- <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.2/css/bootstrap.min.css"
+        rel="stylesheet"> -->
+  <style>
+    .y-wrap {
+      width: 500px;
+      height: 400px;
+      margin: 50px auto;
+      overflow: auto;
+      border: 1px solid lightsalmon;
+    }
+
+    .list-group {
+      width: 160px;
+      height: 200px;
+      overflow: auto;
+      float: left;
+      border: 1px solid lightgreen;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list-group-item {
+      margin: 0 8px;
+      border: 1px solid #f3f3f3;
+      padding: 12px;
+    }
+
+    .content {
+      padding-left: 204px;
+    }
+
+    .select {
+      position: absolute;
+      margin-top: -30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="y-wrap border">
+    <div class="select">
+      <code>overscroll-behavior: </code>
+      <select id="select">
+        <option value="auto"
+                selected>auto</option>
+        <option value="contain">contain</option>
+        <option value="none">none</option>
+      </select>
+    </div>
+    <ul class="list-group"
+        id="list">
+      <li class="list-group-item">将进酒</li>
+      <li class="list-group-item">静夜思</li>
+      <li class="list-group-item">咏鹅</li>
+      <li class="list-group-item">送别</li>
+      <li class="list-group-item">秋登兰山寄张五</li>
+      <li class="list-group-item">夏日南亭怀辛大</li>
+      <li class="list-group-item">宿业师山房待丁大不至</li>
+      <li class="list-group-item">庐山谣寄卢侍御虚舟</li>
+      <li class="list-group-item">梦游天姥吟留别</li>
+      <li class="list-group-item">金陵酒肆留别</li>
+      <li class="list-group-item">宣州谢朓楼饯别校书叔云</li>
+      <li class="list-group-item">辋川闲居赠裴秀才迪</li>
+      <li class="list-group-item">山居秋暝</li>
+      <li class="list-group-item">归嵩山作</li>
+      <li class="list-group-item">终南山</li>
+      <li class="list-group-item">酬张少府</li>
+      <li class="list-group-item">过香积寺</li>
+      <li class="list-group-item">送梓州李使君</li>
+      <li class="list-group-item">汉江临眺</li>
+      <li class="list-group-item">终南别业</li>
+    </ul>
+    <div class="content">
+      <h3 style="text-align: center;">将进酒</h4>
+        <p>君不见黄河之水天上来</p>
+        <p>奔流到海不复回</p>
+        <p>君不见高堂明镜悲白发</p>
+        <p>朝如青丝暮成雪</p>
+        <p>人生得意须尽欢</p>
+        <p>莫使金樽空对月</p>
+        <p>天生我材必有用</p>
+        <p>千金散尽还复来</p>
+        <p>烹羊宰牛且为乐</p>
+        <p>会须一饮三百杯</p>
+        <p>岑夫子，丹丘生，将进酒，杯莫停</p>
+        <p>与君歌一曲</p>
+        <p>请君为我倾耳听</p>
+        <p>钟鼓馔玉不足贵</p>
+        <p>但愿长醉不复醒</p>
+        <p>古来圣贤皆寂寞</p>
+        <p>惟有饮者留其名</p>
+        <p>陈王昔时宴平乐</p>
+        <p>斗酒十千恣欢谑</p>
+        <p>主人何为言少钱</p>
+        <p>径须沽取对君酌</p>
+        <p>五花马、千金裘，呼儿将出换美酒</p>
+        <p>与尔同销万古愁</p>
+    </div>
+  </div>
+
+  <script>
+    const list = document.getElementById('list')
+    const select = document.getElementById('select')
+    select.addEventListener('change', function () {
+      list.style.overscrollBehavior = select.value
+    })
+  </script>
+</body>
+
+</html>
