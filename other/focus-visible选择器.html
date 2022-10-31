@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>:focus-visible选择器</title>
+  <style>
+    button {
+      margin: 8px;
+    }
+
+    button:focus {
+
+      outline: 2px solid lightgoldenrodyellow;
+    }
+
+    .focus:focus {
+      outline: 2px solid lightcoral;
+    }
+
+    .focus-visible:focus-visible {
+      outline: 4px dashed lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <button>普通状态</button>
+  <br>
+  <button class="focus">修改:focus状态</button>
+  <br>
+  <button class="focus-visible">修改:focus-visible状态</button>
+</body>
+
+</html>
