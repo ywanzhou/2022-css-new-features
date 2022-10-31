@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>::marker伪元素</title>
+  <style>
+    li {
+      font-size: 2rem;
+    }
+
+    ul li::marker {
+      /* 设置颜色 */
+      color: lightcoral;
+    }
+
+    ul li:nth-child(2)::marker {
+      /* 设置大小 */
+      font-size: 2.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>一碗周</li>
+    <li>被迫</li>
+    <li>搬砖</li>
+  </ul>
+</body>
+
+</html>
